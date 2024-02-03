@@ -1,0 +1,55 @@
+# Regex Tutorial: Matching a Hex Value
+
+## Introduction
+
+Welcome to this tutorial on matching a hex value using regular expressions. In this tutorial, we'll explore the components of a regular expression that can be used to validate and extract hex values from strings.
+
+## Summary
+
+The regex featured in this tutorial is `/^#?([a-f0-9]{6}|[a-f0-9]{3})$/`. This regex allows you to match a hex value in the form of either a 6-digit or 3-digit hexadecimal number, with or without the leading '#' symbol.
+
+## Table of Contents
+
+- [Component 1: ^#?](#component-1)
+- [Component 2: [a-f0-9]{6}|[a-f0-9]{3}](#component-2)
+- [Component 3: $](#component-3)
+- [About the Author](#about-the-author)
+
+## Component 1: ^#?
+
+The `^#?` component of the regex matches an optional '#' symbol at the beginning of the string. The '^' symbol denotes the start of the string, and the '?' symbol makes the '#' symbol optional.
+
+Example:
+```javascript
+const regex = /^#?/;
+const result = regex.test('#FF0000');
+console.log(result); // Output: true
+
+## Component 2:  [a-f0-9]{6}|[a-f0-9]{3}
+
+The [a-f0-9]{6}|[a-f0-9]{3} component matches either a 6-digit or a 3-digit hexadecimal number. The '[a-f0-9]' part matches any character in the range of 'a' to 'f' or '0' to '9'. The '{6}' and '{3}' specify the exact number of characters to match.
+
+Example:
+
+
+const regex = /[a-f0-9]{6}|[a-f0-9]{3}/;
+const result = regex.test('FF0000');
+console.log(result); // Output: true
+
+## Component 3: $
+
+The '$' component matches the end of the string. It ensures that the regex matches the entire string and doesn't allow any additional characters after the hex value.
+
+Example:
+
+
+const regex = /$/;
+const result = regex.test('FF0000');
+console.log(result); // Output: true
+
+This tutorial was written by Benjamin Pippenger. Feel free to check out my other projects on GitHub!
+
+`[Benjamin Pipppenger](https://github.com/Bjpippenger)`
+
+
+
